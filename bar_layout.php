@@ -11,9 +11,9 @@
     <table>
         <?php for($i=1;$i<10;$i++){ ?>
             <tr>
-                <?php for($k=1;$k<10;$k++) {?>
-                <td><?php echo $k*$i ?></td>
-                <?php }?>
+                <?php for($k=1;$k<10;$k++) :?>
+                    <td><?php echo $k*$i ?></td>
+                <?php endfor ?>
             </tr>
         <?php }?>
     </table>
