@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let twoSum = function (nums, target) {
+            // nums.forEach(function(pro,val){});
+            // console.log(pro,val)
+            for (i = 0; i < 4; i++) {
+                for (k = 0; k < 4; k++) {
+                    if (nums[i] + nums[k] == target) {
+                        console.log(i, k);
+                        return (nums[i], nums[k]);
+                    }
+                }
+            }
+            console.log(nums[i], nums[i + 1])
+        };
+        twoSum([2, 7, 11, 15], 22);
+
+
+
+        let addTwoNumbers = function (l1, l2) {
+            let ar = l1.split('').reverse().join(''), br = l2.split('').reverse().join('');
+            // let aar=ar.reverse(),bbr=br.reverse();
+            // aar.join(',')
+            console.log(parseInt(ar) + parseInt(br))
+            // let L1=l1.length,L2=l2.length;
+            // for(i=0;i<L1;i++){
+            //    console.log(parseInt(ar[i])+parseInt(br[i]))
+            // }
+        };
+        addTwoNumbers("578", "463");
+
+        const o = { apple: 1, xochitl: 2, balloon: 3, guitar: 4, xylp: 5, };
+        let op=Object.keys(o).filter(function(prop,value){
+            
+               
+                console.log(`${prop}:${prop.match('x')},${value}`)
+                
+                return prop.match(`x`)
+            })
+         console.log(op)
+
+        // var addTwoNumbers = function (l1, l2) {
+        //     var List = new ListNode(0);
+        //     var head = List;
+        //     var sum = 0;
+        //     var carry = 0;
+
+        //     while (l1 !== null || l2 !== null || sum > 0) {
+
+        //         if (l1 !== null) {
+        //             sum = sum + l1.val;
+        //             l1 = l1.next;
+        //         }
+        //         if (l2 !== null) {
+        //             sum = sum + l2.val;
+        //             l2 = l2.next;
+        //         }
+        //         if (sum >= 10) {
+        //             carry = 1;
+        //             sum = sum - 10;
+        //         }
+
+        //         head.next = new ListNode(sum);
+        //         head = head.next;
+
+        //         sum = carry;
+        //         carry = 0;
+
+        //     }
+
+        //     return List.next;
+        // };
+        // addTwoNumbers("578", "463");
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="form1" action="post.php" method="post">
+        <div class="form-group">
+            <label for="a">a</label>
+            <input type="text" class="form-control" id="a" name="a">
+        </div>
+        <div class="form-group">
+            <label for="b">b</label>
+            <input type="text" class="form-control" id="b" name="b">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <script>
+        function cardToString(c) {
+            const suits = { 'H': '\u2665', 'C': '\u2663', 'D': '\u2666', 'S': '\u2660' };
+            const values = { 1: 'A', 11: 'J', 12: 'Q', 13: 'K' };
+            for (let i = 2; i <= 10; i++)values[i] = i;
+            console.log(values)
+            console.log(suits['0'])
+        }
+
+        cardToString()
+
+
+
+
+
+        const arr = [5, 7, 2, 4];
+        const sum = arr.reduce(function (a, x) { return a + x }, 0);
+        console.log(sum)
+
+
+
+        const word = ["abc"];
+        const words = word.reduce((e, x) => {
+            if (!e[x[0]]) {
+                e[x[0]] = []
+            }
+            console.log(e[x[0]])
+            e[x[0]].push(x);
+            // console.log(e[x[0]])
+            console.log(e)
+            return e;
+        }, {})
+
+        function isPalindromic(a) {
+            if (a !== a) { 
+                return "false";
+            } 
+                return true;
+        }
+
+
+    </script>
+</body>
+
+</html>

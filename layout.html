@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 100vw;
+            height: 1000px;
+            background: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>註冊資料填寫</h1>
+        </header>
+        <div class="contain">
+            <form action="" method="post">
+                <label for="store_name">店名</label>
+                <input type="text" name="store_name" id="store_name" placeholder="請輸入店名">
+                <label for="tel">電話</label>
+                <input type="text" name="phone" id="tel">
+                <label for="price">消費參考價位</label>
+                <input type="text" name="price" id="price">
+                <label for="name">負責人</label>
+                <input type="text" name="name" id="name">
+                <label for="place">營業地址</label>
+                <!-- 地址用js 填完縣市只會跑出當地的行政區 -->
+                <select name="City"> 
+                    <option name="Taipei" value="台北市" id="place">台北市</option>
+                    <option name="ShinPei" value="新北市" id="place">新北市</option>
+                </select>
+                <select name="district">
+                    <option name="Shilin" value="士林區">士林區</option>
+                    <option name="Shilin" value="士林區">士林區</option>
+                    <option name="Shilin" value="士林區">士林區</option>
+                </select>
+                <label for="store_num">統編</label>
+                <input type="number" name="store_num" id="store_num"  min="3" max="6">
+            </form>
+        </div>
+        <aside></aside>
+
+    </div>
+</body>
+
+</html>

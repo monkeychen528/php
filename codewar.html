@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPalindromic(a) {
+            let b = a.toString().split('').reverse().join('');
+            if (a == b) {
+                console.log('true')
+                return true;
+            } else {
+                console.log('false')
+                return false;
+            }
+        }
+        isPalindromic(103);
+
+
+
+        function findDifference(a, b) {
+            let c = Math.abs(a[0] * a[1] * a[2] - b[0] * b[1] * b[2])
+
+            console.log(c)
+        }
+        findDifference([1, 2, 3], [5, 2, 1]);
+
+
+        // function sortRainbow(colour) {
+        //     for (i = 0; i < colour.length; i++) {
+        //         switch (colour[i]) {
+        //             case 'red':
+        //             console.log(false);
+        //             case 'orange':
+        //             case 'yellow':
+        //             case 'green':
+        //             case 'blue':
+        //             case 'indigo':
+        //             case 'violet':
+        //                 return true;
+        //                 break;
+        //             default: false;
+        //         }
+        //     }
+        // }
+        // sortRainbow(['red','orange','yellow','green','blue','indigo','violet']);
+
+        function sortRainbow(colour) {
+
+            if (colour.join() === 'red,orange,yellow,green,blue,indigo,violet') {
+                //return colour == 'red,orange,yellow,green,blue,indigo,violet'
+                return true;
+            } else return false;
+
+        }
+        sortRainbow(['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'])
+
+        // function longest(s1, s2) {
+        //     let ar1 = (s1+s2).split('').sort();
+        //     for (i = 0; i < (s1+s2).length; i++) {
+        //         for (k =(s1+s2).length-1 ; k >=0 ; k--) {
+        //             if (ar1[i] == ar1[k]) {
+        //                 ar1.splice(k, 1);
+        //                 console.log(ar1)
+        //             }
+        //         }
+        //     }
+        //     let ar3 = ar1.join('');
+        //     console.log(ar3)
+        // }
+        let word;
+        function longest(s1, s2) {
+            let arr=(s1+s2).split('')
+            
+            word =arr.sort().reduce((init, current)=>{
+                if (init.length === 0 || init[init.length - 1] !== current) {
+                    init.push(current);
+                }
+                return init;
+                
+            }, []);
+            // return word.join('')
+            
+        }
+        longest("aretheyhere", "yestheyarehere")
+        console.log(word)
+//a,l,s
+
+
+    </script>
+</body>
+
+</html>
