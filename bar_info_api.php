@@ -12,28 +12,28 @@ $result=[
 
 
 
-if(empty($_GET['store_name'] and
-            $_GET['phone'] and
-            $_GET['opened-time'] and
-            $_GET['type'] and
-            $_GET['address']
+if(empty($_POST['store_name'] and
+            $_POST['phone'] and
+            $_POST['opened-time'] and
+            $_POST['type'] and
+            $_POST['address']
             )){         
        exit;
 }
 
 if(! empty($_POST['type'])){
         $str=implode(' ',$_POST['type']);
-        echo $str;
+        //echo $str;
         
         $type_str=json_encode($str,JSON_UNESCAPED_UNICODE);
-        echo($type_str);
+      
     };
 
 if(! empty($_POST['service'])){
         $str=implode(' ',$_POST['service']);
-        echo $str;
+        //echo $str;
         $service_str=json_encode($str,JSON_UNESCAPED_UNICODE);
-        echo($service_str);
+        //echo($service_str);
     };
 
 
@@ -42,10 +42,12 @@ if(! empty($_POST['service'])){
 
 
 
-    $sql="INSERT INTO `allstore`(
-        `store-name`, `phone`, `opened-time`, `type`, `address`, 
-        `preview-pic`, `company-id`, `owner`, `email`, 
-        `how-much`, `service`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+    $sql="UPDATE `allstore` SET `store-name`=?,
+    `phone`=?,`opened-time`=?,
+    `type`=?,`address`=?,
+    `preview-pic`=?,`company-id`=?,
+    `owner`=?,`email`=?,
+    `how-much`=?,`service`=? WHERE `sid`=10 ";
     
     $stmt=$pdo->prepare($sql);
 
@@ -70,7 +72,7 @@ if(! empty($_POST['service'])){
 if($stmt->rowCount()==1){
     $result['success']=true;
     $result['code']=200;
-    $result['info']='成功新增';
+    $result['info']='成功修改';
 }
 
     echo json_encode($result, JSON_UNESCAPED_UNICODE);
