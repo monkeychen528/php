@@ -64,7 +64,9 @@ $rows = $stmt->fetchAll();
         <div class="col-md-12 pt-3" style="margin-top: 3rem;">
             <nav aria-label="Page navigation example"style="margin-top: .5rem;">
                 <ul class="pagination">
-                    <li class="page-item">
+                    <li class="page-item d-flex">
+                        <a class="page-link " href="?page=<?= $page - 15 ?>?>">
+                            <i class="fas fa-angle-double-left"></i>
                         <a class="page-link " href="?page=<?=$page - 1?>">
                             <i class="fas fa-chevron-left"></i>
                         </a>
@@ -75,20 +77,21 @@ $rows = $stmt->fetchAll();
                             if ($i<1 or $i>$totalPages) {
                                 continue;
                         }
+                    //continue是看if裡的條件，不是離開迴圈跟break意思不一樣
+                    ?>
 
-    //continue是看if裡的條件，不是離開迴圈跟break意思不一樣
-    ?>
-	                        <?php //for ($i = 1; $i <= $totalPages; $i++):
-    ?>
-	                        <li class="page-item <?=$i == $page ? 'active' : ''?>">
-	                            <a class="page-link " href="?page=<?=$i?>"><?=$i?></a></li>
-	                        <? //herf裡面插入php標籤，前面有設定page是以$_GET得到的引數，?page=直接切換到那個頁面的資料
-	                            ?>
-
-	                    <?php endfor;?>
-                    <li class="page-item">
+	                <?php //for ($i = 1; $i <= $totalPages; $i++):?>                                                                               
+	                    <li class="page-item <?=$i == $page ? 'active' : ''?>">
+                        <a class="page-link " href="?page=<?=$i?>"><?=$i?></a>
+                        </li>
+	            <!-- herf裡面插入php標籤，前面有設定page是以$_GET得到的引數，?page=直接切換到那個頁面的資料 -->
+	                        
+	                <?php endfor;?>
+                    <li class="page-item d-flex">
                         <a class="page-link " href="?page=<?=$page + 1?>">
-                            <i class="fas fa-chevron-right"></i></a>
+                        <i class="fas fa-chevron-right"></i></a>
+                        <a class="page-link " href="?page=<?= $page + 15 ?>?>">
+                        <i class="fas fa-angle-double-right"></i></a> 
                     </li>
                 </ul>
             </nav>
@@ -102,7 +105,7 @@ $rows = $stmt->fetchAll();
                 </div>
                 <!-- search bar -->
 
-            <form name="form2" action="bar_search.php" method="POST">
+            <form name="form2" action="bar_search_api.php" method="POST">
 
                 <select name="type" id="">
                     <option value="%日式%">日式</option>
